@@ -1,0 +1,176 @@
+/* geral */
+html{
+    font-family:'Montserrat', sans-serif;
+    background: linear-gradient(to right, #b23a48, #8c2f39, #461220);
+}
+#app{
+    display: flex;
+    flex-direction: column;
+}
+.panel{
+    margin: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+/* áre dos pontos*/
+.scores{
+    display: flex;
+}
+.score{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: center;
+}
+.score h1{
+    font-weight: 400;
+    font-size: 1.6rem;
+}
+.life-bar{
+    width: 90%;
+    height: 20px;
+    border: 1px solid #aaa;  
+    margin-bottom: 10px;
+    text-align: center;
+}
+.life-bar .life{
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    background: linear-gradient(to right, #004b23,#006400,#007200,#38b000,#70e000,#9ef01a,#ccff33);;
+}
+.life-bar .life.danger{
+    background: #a4161a;
+}
+ /* área de resultado */
+.result{
+    display: flex;
+    justify-content: center;
+    font-size: 1.7rem;
+    font-weight: bold;
+}
+.result .win{
+    color: #072ac8; 
+}
+.result .lose{
+    color: #ce0e2d;
+}
+
+/* área dos botões */
+.buttons{
+    display: flex;
+    justify-content: center;
+}
+.btn{
+    padding: 5px 10px;
+    margin: 0px 10px;
+    border-radius: 20px;
+    font-size: 1.1rem;
+    outline: none;
+    border: none;
+}
+.attack{
+    background-color: #e01e37;
+    color: #111;
+}
+.attack:hover{
+    transform: scale(1.1);
+    background-color: #b21e35;
+}
+.attack:active{
+    transform: scale(0.8);
+    background-color: #641220;
+    color: #fff;
+}
+.especial-attack{
+    background-color: #ffea00;
+    color: #111;
+}
+.especial-attack:hover{
+    transform: scale(1.1);
+    background-color: #ffb700;
+}
+.especial-attack:active{
+    transform: scale(0.8);
+    background-color: #ff7b00;
+    color: #fff;
+}
+.heal{
+    background-color: #9cf945;
+    color: #111;
+}
+.heal:hover{
+    transform: scale(1.1);
+    background-color: #80c423;
+}
+.heal:active{
+    transform: scale(0.8);
+    background-color: #1f6924;
+    color: #fff;
+}
+.give-up{
+    background-color: #dee2e6;
+    color: #111;
+}
+.give-up:hover{
+    transform: scale(1.1);
+    background-color: #adb5bd;
+}
+.give-up:active{
+    transform: scale(0.8);
+    background-color: #212529;
+    color: #fff
+}
+.new-game{
+    background-color: #48cae4;
+    color: #111;
+}
+.new-game:hover{
+    transform: scale(1.1);
+    background-color: #0096c7;
+}
+.new-game:active{
+    transform: scale(0.8);
+    background-color: #023e8a;
+    color: #fff;
+}
+
+/* área dos logs */
+.logs ul{
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.logs ul li{
+    display: flex;
+    justify-content: center;
+    margin: 4px 0px;
+    padding: 3px 0px;
+    font-weight: 500;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    border-radius: 3px;
+    color: #fff;
+}
+.player{
+    background-color: #4895efaa;
+    color: #fff;
+}
+.enemy{
+    background-color: #dc2f02aa;
+    color: #fff;
+}
+.heal{
+    background-color: #2b9348aa;
+    color: #fff;
+}
+.alert{
+    background-color: #ffa200aa;
+    color: #fff;
+}

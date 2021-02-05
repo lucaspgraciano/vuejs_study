@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <title>Derrote o inimigo</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">            
+    </head>
+    <body>
+        <div id="app">
+
+            <div class="panel scores">
+                <div class="score">
+                    <h1>JOGADOR</h1>
+                    <div class="life-bar">
+                        <div class="life" :class="{danger: 20 > playerLife}" :style="{width: playerLife + '%'}"></div>
+                        <div>{{ playerLife }}%</div>
+                    </div>
+                </div>
+
+                <div class="score">
+                    <h1>INIMIGO</h1>
+                    <div class="life-bar">
+                        <div class="life" :class="{danger: 20 > enemyLife}" :style="{width: enemyLife + '%'}"></div>
+                        <div>{{ enemyLife }}%</div>
+                    </div>
+                </div>
+            </div>
+
+            <div v-if="hasResult" class="panel result">
+                <div v-if="enemyLife == 0" class="win">VOCÊ VENCEU O INIMIGO!</div>
+                <div v-else class="lose">VOCÊ FOI DERROTADO...</div>
+            </div>
+
+            <div class="panel buttons">
+                <template v-if="running">
+                    <button @click="attack(false)" class="btn attack">ATAQUE</button>
+                    <button @click="attack(true)" class="btn especial-attack">ATAQUE ESPECIAL</button>
+                    <button @click="healAndHurt" class="btn heal">CURAR</button>
+                    <button class="btn give-up" @click="running = false">DESISTIR</button>
+                </template>
+                <button v-else class="btn new-game" @click="startGame">NOVO JOGO</button>
+            </div>
+
+            <div v-if="logs.length" class="panel logs">
+                <ul>
+                    <li v-for="log in logs" :class="log.cls" class="log">{{ log.text }}</li>
+                </ul>
+            </div>
+        
+        </div>
+    </body>
+    <script src="app.js"></script>
+</html>
